@@ -13,13 +13,13 @@ export default createStore({
   },
   actions: {
     async registerUser({commit},newUser){
-      let {data} = await axios.post(baseUrl+'/users',newUser)
+      let {data} = await axios.post(baseUrl+'/',newUser)
       alert(data.msg)
       window.location.reload()
     },
     async loginUser({commit}, user){
       // console.log(user);
-      let {data} = await axios.post(baseUrl+'/login',user)
+      let {data} = await axios.post(baseUrl+'/',user)
       alert(data.msg)
       commit('setLogged',true)
       // window.location.reload()
